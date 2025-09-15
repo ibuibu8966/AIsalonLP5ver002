@@ -22,7 +22,7 @@ export default function PricingSection() {
   ]
 
   return (
-    <section className="py-24 px-6 japanese-pattern" ref={ref}>
+    <section className="py-32 px-6 bg-gradient-to-b from-gray-900 to-black" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-20"
@@ -30,23 +30,23 @@ export default function PricingSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-light mb-8 luxury-title text-gray-800">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 text-white">
             料金プラン
           </h2>
         </motion.div>
 
         <motion.div
-          className="pricing-card p-12 rounded-lg text-center"
+          className="pricing-card p-6 sm:p-8 md:p-12 text-center"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h3 className="font-serif text-4xl font-medium mb-6 text-gold">ベーシックプラン</h3>
-          <div className="text-5xl md:text-6xl font-bold mb-8 text-gold">
-            ¥2,980<span className="text-2xl">/月（税込）</span>
+          <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium mb-4 md:mb-6 bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent">ベーシックプラン</h3>
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent">
+            ¥2,980<span className="text-lg sm:text-xl md:text-2xl">/月（税込）</span>
           </div>
           
-          <h4 className="text-2xl font-semibold mb-8 text-gray-800">含まれるサービス:</h4>
+          <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-4 sm:mb-6 md:mb-8 text-white">含まれるサービス:</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {services.map((service, index) => (
               <motion.div
@@ -56,18 +56,18 @@ export default function PricingSection() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
               >
-                <ul className="luxury-list text-gray-700">
+                <ul className="luxury-list">
                   <li>{service}</li>
                 </ul>
               </motion.div>
             ))}
           </div>
           
-          <p className="text-xl text-gray-700 mb-8">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mb-6 md:mb-8">
             <strong>シンプルで手頃な価格で、充実したサポートを受けられます。</strong>
           </p>
           
-          <button className="premium-btn rounded-lg text-xl px-16 py-6 text-white">
+          <button className="premium-btn text-white">
             今すぐ申し込む
           </button>
         </motion.div>

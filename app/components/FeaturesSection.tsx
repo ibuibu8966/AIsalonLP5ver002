@@ -54,15 +54,23 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section className="py-24 px-6 japanese-pattern" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section className="py-32 px-6 relative" ref={ref}>
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/features-bg.jpg)',
+          filter: 'brightness(0.3)',
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70" />
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div 
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-light mb-8 luxury-title text-gray-800">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 text-white px-4 sm:px-0">
             サロンの3つの特徴
           </h2>
         </motion.div>
@@ -71,22 +79,22 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="luxury-card p-12 rounded-lg"
+              className="luxury-card p-6 sm:p-8 md:p-10"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
               <div className="flex items-center mb-8">
-                <div className="feature-icon text-white text-2xl mr-6">{feature.number}</div>
-                <h3 className="font-serif text-3xl font-medium text-gold">{feature.title}</h3>
+                <div className="feature-icon text-white text-xl font-bold mr-6">{feature.number}</div>
+                <h3 className="font-serif text-base sm:text-lg md:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent">{feature.title}</h3>
               </div>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">{feature.description}</p>
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 mb-4 md:mb-6 leading-tight sm:leading-relaxed">{feature.description}</p>
               
               {feature.basics && (
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <h4 className="text-xl font-semibold mb-4 text-gold">基礎カリキュラム:</h4>
-                    <ul className="luxury-list text-gray-700 space-y-2">
+                    <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 md:mb-4 text-gold">基礎カリキュラム:</h4>
+                    <ul className="luxury-list space-y-2">
                       {feature.basics.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
@@ -94,8 +102,8 @@ export default function FeaturesSection() {
                   </div>
                   {feature.specialized && (
                     <div>
-                      <h4 className="text-xl font-semibold mb-4 text-gold">専門分野カリキュラム（順次展開予定）:</h4>
-                      <ul className="luxury-list text-gray-700 space-y-2">
+                      <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 md:mb-4 text-gold">専門分野カリキュラム（順次展開予定）:</h4>
+                      <ul className="luxury-list space-y-2">
                         {feature.specialized.map((item, i) => (
                           <li key={i}>
                             <strong>{item.title}</strong>: {item.content}
@@ -109,8 +117,8 @@ export default function FeaturesSection() {
               
               {feature.skills && (
                 <div className="space-y-6">
-                  <h4 className="text-xl font-semibold mb-4 text-gold">学べること:</h4>
-                  <ul className="luxury-list text-gray-700 space-y-3">
+                  <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 md:mb-4 text-gold">学べること:</h4>
+                  <ul className="luxury-list space-y-3">
                     {feature.skills.map((skill, i) => (
                       <li key={i}>{skill}</li>
                     ))}
@@ -120,8 +128,8 @@ export default function FeaturesSection() {
               
               {feature.support && (
                 <div className="space-y-6">
-                  <h4 className="text-xl font-semibold mb-4 text-gold">サポート内容:</h4>
-                  <ul className="luxury-list text-gray-700 space-y-3">
+                  <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-3 md:mb-4 text-gold">サポート内容:</h4>
+                  <ul className="luxury-list space-y-3">
                     {feature.support.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
@@ -129,8 +137,8 @@ export default function FeaturesSection() {
                 </div>
               )}
               
-              <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                <p className="text-lg font-semibold text-gold">到達目安: {feature.goal}</p>
+              <div className="mt-8 p-6 bg-gradient-to-r from-black/50 to-black/30 rounded-2xl backdrop-blur-sm border border-gold/30">
+                <p className="text-lg font-semibold bg-gradient-to-r from-gold to-yellow-400 bg-clip-text text-transparent">到達目安: {feature.goal}</p>
               </div>
             </motion.div>
           ))}

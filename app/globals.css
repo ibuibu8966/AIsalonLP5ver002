@@ -15,28 +15,54 @@
 
   body {
     @apply font-sans leading-relaxed text-gray-800;
-    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+    background: #000000;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 640px) {
+    .section-padding {
+      @apply px-4 py-16;
+    }
   }
 }
 
 @layer components {
   .luxury-card {
-    @apply bg-white/95 backdrop-blur-xl border border-gold/20 shadow-xl transition-all duration-300;
+    @apply backdrop-blur-2xl rounded-2xl shadow-2xl transition-all duration-500;
+    background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(30,30,30,0.9) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .luxury-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  }
+
+  .luxury-card:hover::before {
+    @apply opacity-100;
   }
 
   .luxury-card:hover {
-    @apply -translate-y-1 shadow-2xl border-gold;
+    @apply -translate-y-2 shadow-[0_20px_60px_rgba(212,175,55,0.35)];
+    border-color: rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, rgba(25,25,25,0.95) 0%, rgba(35,35,35,0.9) 100%);
   }
 
   .premium-btn {
-    @apply relative overflow-hidden font-semibold tracking-wide transition-all duration-300;
+    @apply relative overflow-hidden font-semibold tracking-wide transition-all duration-500 rounded-full px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-6;
     background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
   }
 
   .premium-btn::before {
     content: '';
-    @apply absolute top-0 -left-full w-full h-full transition-all duration-500;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    @apply absolute top-0 -left-full w-full h-full transition-all duration-700;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   }
 
   .premium-btn:hover::before {
@@ -44,8 +70,9 @@
   }
 
   .premium-btn:hover {
-    @apply -translate-y-0.5 shadow-lg;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    @apply -translate-y-1 shadow-2xl;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+    transform: translateY(-3px) scale(1.02);
   }
 
   .section-divider {
@@ -65,25 +92,42 @@
   }
 
   .feature-icon {
-    @apply w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg;
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl;
     background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
   }
 
   .testimonial-card {
-    @apply bg-charcoal/95 text-white border-l-4 border-gold;
+    @apply bg-gradient-to-br from-gray-900 to-black text-white rounded-3xl overflow-hidden;
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--dark-gold) 100%);
   }
 
   .pricing-card {
-    @apply relative bg-white;
-    border: 2px solid transparent;
-    background-clip: padding-box;
+    @apply relative rounded-3xl overflow-hidden;
+    background: linear-gradient(135deg, rgba(20,20,20,0.98) 0%, rgba(30,30,30,0.95) 100%);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.3);
   }
 
   .pricing-card::before {
     content: '';
-    @apply absolute inset-0 rounded-lg -z-10;
+    @apply absolute inset-0 rounded-3xl -z-10;
     background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-    margin: -2px;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
   }
 
   .japanese-pattern {
@@ -91,11 +135,15 @@
   }
 
   .luxury-list li {
-    @apply relative pl-8 mb-3;
+    @apply relative pl-6 sm:pl-8 mb-2 sm:mb-3 text-gray-300 text-xs sm:text-sm md:text-base leading-tight sm:leading-normal;
   }
 
   .luxury-list li::before {
-    content: '◆';
-    @apply absolute left-0 text-gold font-bold;
+    content: '▸';
+    @apply absolute left-0 font-bold;
+    background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

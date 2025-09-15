@@ -36,7 +36,7 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="py-24 px-6 japanese-pattern" ref={ref}>
+    <section className="py-32 px-6 bg-black" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-20"
@@ -44,7 +44,7 @@ export default function FAQSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-light mb-8 luxury-title text-gray-800">
+          <h2 className="font-serif text-4xl md:text-5xl font-light mb-8 text-white">
             よくある質問
           </h2>
         </motion.div>
@@ -53,13 +53,13 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="luxury-card p-8 rounded-lg"
+              className="luxury-card p-8"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <h3 className="text-xl font-semibold mb-4 text-gold">Q. {faq.question}</h3>
-              <p className="text-gray-700 leading-relaxed">A. {faq.answer}</p>
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent leading-tight">Q. {faq.question}</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-tight sm:leading-relaxed">A. {faq.answer}</p>
             </motion.div>
           ))}
         </div>

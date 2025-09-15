@@ -30,7 +30,7 @@ export default function InstructorsSection() {
   ]
 
   return (
-    <section className="py-24 px-6" ref={ref}>
+    <section className="py-32 px-6 bg-gray-900" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="text-center mb-20"
@@ -38,7 +38,7 @@ export default function InstructorsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-light mb-8 luxury-title text-gray-800">
+          <h2 className="font-serif text-4xl md:text-5xl font-light mb-8 text-white">
             実績豊富な講師陣があなたをサポート
           </h2>
         </motion.div>
@@ -47,15 +47,15 @@ export default function InstructorsSection() {
           {instructors.map((instructor, index) => (
             <motion.div
               key={index}
-              className="luxury-card p-12 rounded-lg"
+              className="luxury-card p-12"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
-              <h3 className="font-serif text-2xl md:text-3xl font-medium mb-6 text-gold">{instructor.name}</h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">{instructor.description}</p>
-              <h4 className="text-xl font-semibold mb-4 text-gold">専門分野:</h4>
-              <ul className="luxury-list text-gray-700 space-y-2">
+              <h3 className="font-serif text-base sm:text-lg md:text-2xl lg:text-3xl font-medium mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent leading-tight">{instructor.name}</h3>
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-tight sm:leading-relaxed mb-4 sm:mb-6 md:mb-8">{instructor.description}</p>
+              <h4 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent">専門分野:</h4>
+              <ul className="luxury-list space-y-2">
                 {instructor.specialties.map((specialty, i) => (
                   <li key={i}>{specialty}</li>
                 ))}
@@ -65,7 +65,7 @@ export default function InstructorsSection() {
         </div>
 
         <motion.div
-          className="text-center mt-12 p-6 bg-gray-50 rounded-lg"
+          className="text-center mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-gold/20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
