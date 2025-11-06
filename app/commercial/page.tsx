@@ -43,7 +43,7 @@ export default function CommercialTransactions() {
           <section className="mb-10">
             <h2 className="text-2xl font-serif text-gold mb-4">運営統括責任者</h2>
             <div className="pl-4 border-l-2 border-gold/30">
-              <p className="text-gray-300">代表取締役</p>
+              <p className="text-gray-300">代表取締役 加藤 大成</p>
             </div>
           </section>
 
@@ -62,7 +62,7 @@ export default function CommercialTransactions() {
               <p className="text-gray-300 mb-2">
                 Email: senritsu@senritsu.site
               </p>
-              <p className="text-gray-300 mb-2">電話番号: 06-6781-0808</p>
+              <p className="text-gray-300 mb-2">電話番号: 07-3626-8645</p>
               <p className="text-gray-300">ウェブサイト: senritsu.site</p>
             </div>
           </section>

@@ -45,7 +45,9 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-serif text-gold mb-4">1. 事業者情報</h2>
             <div className="pl-4 border-l-2 border-gold/30">
               <p className="mb-2">事業者名: 株式会社SENRITSU</p>
+              <p className="mb-2">代表取締役: 加藤 大成</p>
               <p className="mb-2">所在地: 大阪府東大阪市高殿町11-2 カワショウビル2・3階</p>
+              <p className="mb-2">電話番号: 07-3626-8645</p>
               <p>お問い合わせ先: senritsu@senritsu.site</p>
             </div>
           </section>

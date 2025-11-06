@@ -23,6 +23,7 @@ export default function Footer() {
           <div>
             <h3 className="text-gold text-lg font-semibold mb-4">会社情報</h3>
             <p className="text-sm mb-2">株式会社SENRITSU</p>
+            <p className="text-sm mb-2">代表取締役 加藤 大成</p>
             <p className="text-sm mb-2">大阪府東大阪市高殿町11-2</p>
             <p className="text-sm">カワショウビル2・3階</p>
           </div>
@@ -83,7 +84,7 @@ export default function Footer() {
           <div>
             <h3 className="text-gold text-lg font-semibold mb-4">お問い合わせ</h3>
             <p className="text-sm mb-2">Email: senritsu@senritsu.site</p>
-            <p className="text-sm mb-2">電話: 06-6781-0808</p>
+            <p className="text-sm mb-2">電話: 07-3626-8645</p>
             <p className="text-sm">Web: senritsu.site</p>
           </div>
         </div>
