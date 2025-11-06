@@ -30,7 +30,7 @@ export default function InstructorsSection() {
   ]
 
   return (
-    <section className="py-32 px-6 bg-gray-900" ref={ref}>
+    <section id="instructors" className="py-32 px-6 bg-gray-900" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="text-center mb-20"

@@ -22,7 +22,7 @@ export default function PricingSection() {
   ]
 
   return (
-    <section className="py-32 px-6 bg-gradient-to-b from-gray-900 to-black" ref={ref}>
+    <section id="pricing" className="py-32 px-6 bg-gradient-to-b from-gray-900 to-black" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-20"

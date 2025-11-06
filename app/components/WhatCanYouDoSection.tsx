@@ -15,7 +15,7 @@ export default function WhatCanYouDoSection() {
   ]
 
   return (
-    <section className="py-32 px-6 relative overflow-hidden" ref={ref}>
+    <section id="curriculum" className="py-32 px-6 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"

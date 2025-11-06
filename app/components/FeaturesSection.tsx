@@ -54,7 +54,7 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section className="py-32 px-6 relative" ref={ref}>
+    <section id="features" className="py-32 px-6 relative" ref={ref}>
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{

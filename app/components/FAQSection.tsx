@@ -36,7 +36,7 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="py-32 px-6 bg-black" ref={ref}>
+    <section id="faq" className="py-32 px-6 bg-black" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-20"
